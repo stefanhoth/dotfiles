@@ -1,9 +1,0 @@
-git-recall
-http-server
-imagemin-cli
-live-server
-manage-wifi-cli
-netlify-cli
-vmd
-wifi-password-cli
-vdx
