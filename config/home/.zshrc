@@ -1,18 +1,14 @@
-export PATH=:/usr/local/bin:/usr/local/sbin:$HOME/bin:$HOME/.bin:$HOME/.go-modules/bin:/opt/homebrew/bin:/usr/local/opt/curl/bin:$HOME/.iterm2:$PATH
+export PATH=:/usr/local/bin:/usr/local/sbin:$HOME/bin:$HOME/.bin:$HOME/.iterm2:$PATH
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+#ZSH=$HOME/.oh-my-zsh
 
-export GOPATH=$HOME/.go-modules
 export EDITOR=code
 export LC_ALL=en_US.UTF-8
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT='❗  Use the alias: '
 
-export _Z_CMD="j"
-. ~/.bin/z.sh
-
 ################################################################################
 # private
-source ~/.my-config.sh
+#source ~/.my-config.sh
 
 ################################################################################
 # zsh
@@ -107,8 +103,6 @@ plugins=(
 # Customize history
 HIST_STAMPS="yyyy-mm-dd"
 
-source $ZSH/oh-my-zsh.sh
-
 ################################################################################
 # iterm
 
@@ -121,9 +115,6 @@ iterm2_print_user_vars() {
   iterm2_set_user_var nodeVersion $(node -v)
   iterm2_set_user_var pwd $(pwd)
 }
-
-# mcfly
-eval "$(mcfly init zsh)"
 
 ################################################################################
 # fnm setup

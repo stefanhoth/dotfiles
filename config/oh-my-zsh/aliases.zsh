@@ -11,11 +11,6 @@ alias cat='bat'
 # ip address
 alias ip="echo Your ip is; dig +short myip.opendns.com @resolver1.opendns.com;"
 
-
-# set up https-server
-# https://paulbrowne.xyz/https-localhost
-alias https-server='http-server --ssl --cert ~/.ssl/localhost.crt --key ~/.ssl/localhost.key -a localhost -o'
-
 # launch applications
 alias chrome='open -a "/Applications/Google Chrome.app" --args --force-renderer-accessibility'
 alias chromeDebug='chrome --remote-debugging-port=9222'
@@ -46,15 +41,10 @@ alias mkdir="mkdir -v"
 alias t=trash
 
 # MAC adress changer (free wifi hack)
-alias freewifi="sudo ifconfig en0 ether `openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//'`"
-
-# directory short cuts
-alias p='cd ~/Projects/'
-alias d='cd ~/Downloads/'
-alias sj='cd ~/Projects/github.com/stefanjudis/stefan-judis-website/'
+#alias freewifi="sudo ifconfig en0 ether `openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//'`"
 
 # suffix aliases
 # https://www.stefanjudis.com/today-i-learned/suffix-aliases-in-zsh/
-alias -s {js,json,env,gitignore,md,html,css,toml}=cat
+alias -s {js,json,env,gitignore,md,html,css,toml,yaml,txt}=cat
 alias -s git="clone"
 
