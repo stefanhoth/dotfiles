@@ -50,28 +50,12 @@ symlink "$FROM_DIR" "$TARGET_DIR"
 
 log_section_start "Installing oh-my-zsh"
 
-if [ -d ~/.oh-my-zsh/ ]; then
-  echo "Cleaning up ~/.oh-my-zsh/"
-  rm -rf ~/.oh-my-zsh/
-fi
-
-RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 FROM_DIR="$CONFIG_DIR/oh-my-zsh"
 TARGET_DIR=~/.oh-my-zsh/custom/
 symlink_files "$FROM_DIR/*" "$TARGET_DIR"
 # I resure the `completion` directory that's automatically loaded
 mkdir ~/.oh-my-zsh/completions
 symlink_files "$FROM_DIR/completions/*" ~/.oh-my-zsh/completions
-
-echo "Installing fast-syntax-highlighting"
-git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/fast-syntax-highlighting
-
-echo "Installing zsh-autosuggestions"
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-
-echo "Installing alias-tips"
-git clone git@github.com:djui/alias-tips.git ~/.oh-my-zsh/custom/plugins/alias-tips
 
 # *************************************
 # Other scripts

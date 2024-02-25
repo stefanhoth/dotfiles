@@ -64,8 +64,8 @@ function lc() {
 ################################################################################
 # oh-my-zsh
 
-plugins=(git node npm github zsh-autosuggestions alias-tips fast-syntax-highlighting)
-ZSH_THEME="stefanjudis"
+# Path to your oh-my-zsh customisation.
+export ZSH_CUSTOM="/Users/stefan/.zsh-custom"
 
 # Customize history
 HIST_STAMPS="yyyy-mm-dd"

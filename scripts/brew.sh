@@ -15,8 +15,17 @@ brew -v >/dev/null 2>&1 || /bin/bash -c "$(curl -fsSL https://raw.githubusercont
 # Install common apps and packages, including vscode plugins
 brew bundle install --file $CONFIG_DIR/Brewfile
 
+# set up ZSH
+FROM_DIR="$CONFIG_DIR/oh-my-zsh"
+TARGET_DIR=~/.zsh-custom/
+symlink_files "$FROM_DIR/*" "$TARGET_DIR"
 
-# set it as default shell
-chsh -s /bin/zsh
+# already installed via brew, just need to activate it
+echo "Installing fast-syntax-highlighting"
+source  $(brew --prefix)/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
+
+# set zsh it as default shell
+chsh -s $(brew --prefix)/bin/zsh
 
 # set up p10k
