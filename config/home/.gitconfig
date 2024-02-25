@@ -27,7 +27,7 @@
 [mergetool]
   keepBackup = true
 [core]
-  editor = vim
+  editor = code --wait
   excludesfile = ~/.gitignore_global
   pager = delta --plus-style="syntax #195019" --minus-style="normal #601919" --paging=always
 [push]
@@ -50,6 +50,9 @@
   enabled = true
 [merge]
 	conflictstyle = diff3
+  tool = vscode
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
 [gpg]
 	format = ssh
 [gpg "ssh"]
