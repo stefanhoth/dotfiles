@@ -6,6 +6,11 @@ export EDITOR=code
 export LC_ALL=en_US.UTF-8
 export ZSH_PLUGINS_ALIAS_TIPS_TEXT='❗  Use the alias: '
 
+# use SSH keys from 1password vaults via agent
+# see https://developer.1password.com/docs/ssh/get-started/#step-3-turn-on-the-1password-ssh-agent
+
+export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+
 ################################################################################
 # private
 #source ~/.my-config.sh
