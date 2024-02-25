@@ -29,3 +29,6 @@ source  $(brew --prefix)/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-
 chsh -s $(brew --prefix)/bin/zsh
 
 # set up p10k
+echo "source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
+source ~/.zshrc
+p10k configure

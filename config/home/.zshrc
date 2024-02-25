@@ -64,8 +64,45 @@ function lc() {
 ################################################################################
 # oh-my-zsh
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 # Path to your oh-my-zsh customisation.
 export ZSH_CUSTOM="/Users/stefan/.zsh-custom"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+#ZSH_THEME="agnoster"
+source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+plugins=(
+    alias-tips
+    git
+    gitfast
+    git-auto-fetch
+#    git-prompt
+    common-aliases
+    command-not-found
+    colored-man-pages
+    colorize
+    dirhistory
+    dotenv
+    fast-syntax-highlighting
+#    vscode
+#    ssh-agent
+#    kubectl
+    zsh-autosuggestions
+    )
 
 # Customize history
 HIST_STAMPS="yyyy-mm-dd"
