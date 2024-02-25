@@ -1,6 +1,7 @@
 [user]
   name = Stefan Hoth
   email = 45467+stefanhoth@users.noreply.github.com
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBtkncWivZHE1h0muZJyh8cIM/zjrYXBUKmg54RCrWU4
 [color]
   diff = auto
   stats = auto
@@ -49,3 +50,13 @@
   enabled = true
 [merge]
 	conflictstyle = diff3
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+	allowedSignersFile = /Users/shoth/.gitconfig_allowed_signers
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+
