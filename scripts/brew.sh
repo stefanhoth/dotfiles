@@ -6,54 +6,17 @@ echo "#############################"
 echo ""
 
 ROOT_DIR=$1
+CONFIG_DIR="$ROOT_DIR/config"
 source "$ROOT_DIR/commands/__util.sh"
 
+# Check for brew, install if not present
 brew -v >/dev/null 2>&1 || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
-brew_install_or_upgrade zsh
-brew_install_or_upgrade zsh-completions
+# Install common apps and packages, including vscode plugins
+brew bundle install --file $CONFIG_DIR/Brewfile
+
 
 # set it as default shell
 chsh -s /bin/zsh
 
-# some brew cask dependencies really need svn :/
-brew_install_or_upgrade svn
-brew_install_or_upgrade highlight
-brew_install_or_upgrade jq
-brew_install_or_upgrade gh
-brew_install_or_upgrade curl
-brew_install_or_upgrade git
-brew_install_or_upgrade git-delta
-brew_install_or_upgrade go
-brew_install_or_upgrade shellcheck
-brew_install_or_upgrade fzf
-brew_install_or_upgrade coreutils
-brew_install_or_upgrade docker
-brew_install_or_upgrade docker-machine
-brew_install_or_upgrade git-lfs
-brew_install_or_upgrade bluesnooze
-brew_install_or_upgrade pnpm
-
-# taps
-brew tap cantino/mcfly
-brew install mcfly
-
-# rust based tools
-brew_install_or_upgrade bat
-brew_install_or_upgrade exa
-brew_install_or_upgrade grex
-
-# ffmpeg for quick video compression
-brew install ffmpeg --with-libvorbis --with-theora --with-libogg --with-libvorbis --with-gpl --with-version3 --with-nonfree --with-postproc --with-libaacplus --with-libass --with-libcelt --with-libfaac --with-libfdk-aac --with-libfreetype --with-libmp3lame --with-libopencore-amrnb --with-libopencore-amrwb --with-libopenjpeg --with-openssl --with-libopus --with-libschroedinger --with-libspeex --with-libtheora --with-libvo-aacenc --with-libvorbis --with-libvpx --with-libx264 --with-libxvid
-
-# *********************************
-# mac app store
-brew_install_or_upgrade mas
-# todoist
-mas install 585829637
-# Hand mirror
-mas install 1502839586
-
-# ********************************
-# paid apps
-# https://apps.apple.com/us/app/rcmd-app-switcher/id1596283165
+# set up p10k
